@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agence E-commerce - Vos 4 Expertises Clés</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* RESET & BASE STYLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo i {
+            color: #4fc3f7;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #4fc3f7;
+        }
+        
+        .cta-header {
+            background: #ff4081;
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(255, 64, 129, 0.3);
+        }
+        
+        .cta-header:hover {
+            background: #e91e63;
+            transform: translateY(-2px);
+        }
+        
+        /* HERO SECTION */
+        .hero {
+            text-align: center;
+            padding: 4rem 0 3rem;
+            background: white;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            color: #1a237e;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #546e7a;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        /* SERVICES GRID - L'ÉVENTAIL */
+        .services-section {
+            padding: 3rem 0;
+            background: #f5f7ff;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #1a237e;
+            margin-bottom: 3rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-top: 5px solid;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            height: 80px;
+            width: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .service-card:nth-child(1) {
+            border-color: #4fc3f7;
+        }
+        
+        .service-card:nth-child(1) .service-icon {
+            background: #e1f5fe;
+            color: #4fc3f7;
+        }
+        
+        .service-card:nth-child(2) {
+            border-color: #66bb6a;
+        }
+        
+        .service-card:nth-child(2) .service-icon {
+            background: #e8f5e9;
+            color: #66bb6a;
+        }
+        
+        .service-card:nth-child(3) {
+            border-color: #ffb74d;
+        }
+        
+        .service-card:nth-child(3) .service-icon {
+            background: #fff3e0;
+            color: #ffb74d;
+        }
+        
+        .service-card:nth-child(4) {
+            border-color: #ff4081;
+        }
+        
+        .service-card:nth-child(4) .service-icon {
+            background: #fce4ec;
+            color: #ff4081;
+        }
+        
+        .service-title {
+            font-size: 1.5rem;
+            color: #1a237e;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .service-description {
+            color: #546e7a;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .service-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .service-features li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .service-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4caf50;
+            font-weight: bold;
+        }
+        
+        .service-cta {
+            display: inline-block;
+            background: #1a237e;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid #1a237e;
+            margin-top: auto;
+        }
+        
+        .service-cta:hover {
+            background: transparent;
+            color: #1a237e;
+        }
+        
+        /* PROCESS SECTION */
+        .process-section {
+            padding: 4rem 0;
+            background: white;
+        }
+        
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+            counter-reset: step-counter;
+        }
+        
+        .process-step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 0 1.5rem;
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        
+        .process-step:not(:last-child):after {
+            content: "";
+            position: absolute;
+            top: 40px;
+            right: -30px;
+            width: 60px;
+            height: 2px;
+            background: #4fc3f7;
+            display: none;
+        }
+        
+        @media (min-width: 768px) {
+            .process-step:not(:last-child):after {
+                display: block;
+            }
+        }
+        
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: #e1f5fe;
+            color: #1a237e;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+            position: relative;
+        }
+        
+        .step-number:before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+        }
+        
+        .step-title {
+            font-size: 1.3rem;
+            color: #1a237e;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        /* CTA SECTION */
+        .cta-section {
+            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+            border-radius: 20px;
+            margin: 3rem 20px;
+        }
+        
+        .cta-title {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-subtitle {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            background: #ff4081;
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+            display: inline-block;
+            transition: all 0.3s;
+            box-shadow: 0 8px 20px rgba(255, 64, 129, 0.3);
+        }
+        
+        .cta-button:hover {
+            background: #e91e63;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(255, 64, 129, 0.4);
+        }
+        
+        /* FOOTER */
+        footer {
+            background: #1a237e;
+            color: white;
+            padding: 3rem 0 2rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .footer-contact {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 1.5rem;
+            width: 100%;
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .process-step {
+                flex: 100%;
+            }
+            
+            .cta-section {
+                margin: 3rem 10px;
+                padding: 3rem 1rem;
+            }
+            
+            .cta-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-rocket"></i>
+                <span>EcomAgency Pro</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#process">Processus</a></li>
+                    <li><a href="#clients">Clients</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="#diagnostic" class="cta-header">Diagnostic gratuit</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <h1>Votre succès e-commerce en 4 expertises clés</h1>
+            <p class="hero-subtitle">
+                Sélectionnez votre point de départ pour obtenir un diagnostic gratuit et personnalisé avec nos experts
+            </p>
+        </div>
+    </section>
+
+    <!-- SERVICES GRID -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title">Choisissez votre service clé</h2>
+            
+            <div class="services-grid">
+                <!-- Service 1: Publicité -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3 class="service-title">Gestion de Publicité</h3>
+                    <p class="service-description">
+                        Campagnes Facebook/Google Ads qui convertissent réellement et optimisent votre ROAS.
+                    </p>
+                    <ul class="service-features">
+                        <li>Audit complet de vos campagnes existantes</li>
+                        <li>Optimisation quotidienne du ROAS</li>
+                        <li>Scaling contrôlé et rentable</li>
+                        <li>Reporting transparent hebdomadaire</li>
+                    </ul>
+                    <a href="#form" class="service-cta" data-service="publicite">Boostez vos pubs</a>
+                </div>
+
+                <!-- Service 2: Boutique -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <h3 class="service-title">Création de Boutique</h3>
+                    <p class="service-description">
+                        Boutiques Shopify performantes, convertissantes et optimisées pour l'expérience utilisateur.
+                    </p>
+                    <ul class="service-features">
+                        <li>Design UX/UI sur-mesure</li>
+                        <li>Intégration des moyens de paiement</li>
+                        <li>Optimisation mobile-first</li>
+                        <li>Formation livraison</li>
+                    </ul>
+                    <a href="#form" class="service-cta" data-service="boutique">Créez votre boutique</a>
+                </div>
+
+                <!-- Service 3: Produits -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3 class="service-title">Produits Gagnants</h3>
+                    <p class="service-description">
+                        Sourcing de produits tendance et validés par le marché pour maximiser vos ventes.
+                    </p>
+                    <ul class="service-features">
+                        <li>Analyse de tendances en temps réel</li>
+                        <li>Validation produit via outils pro</li>
+                        <li>Fournisseurs certifiés et testés</li>
+                        <li>Test de marché avant lancement</li>
+                    </ul>
+                    <a href="#form" class="service-cta" data-service="produits">Trouvez vos produits</a>
+                </div>
+
+                <!-- Service 4: Package -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="service-title">Solution Complète</h3>
+                    <p class="service-description">
+                        Boutique + Produits + Publicité = La formule gagnante pour un lancement réussi.
+                    </p>
+                    <ul class="service-features">
+                        <li>Lancement clé en main en 30 jours</li>
+                        <li>Synergie totale des 3 expertises</li>
+                        <li>Accompagnement sur 3 mois minimum</li>
+                        <li>Résultats concrets garantis</li>
+                    </ul>
+                    <a href="#form" class="service-cta" data-service="complet">Lancez-vous serein</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS SECTION -->
+    <section id="process" class="process-section">
+        <div class="container">
+            <h2 class="section-title">Comment ça marche ?</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number"></div>
+                    <h3 class="step-title">Diagnostic Gratuit</h3>
+                    <p>Nous analysons votre situation actuelle et identifions les meilleures opportunités pour vous.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number"></div>
+                    <h3 class="step-title">Plan d'Action</h3>
+                    <p>Nous créons une stratégie sur-mesure avec des objectifs clairs et un calendrier réaliste.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number"></div>
+                    <h3 class="step-title">Mise en Œuvre</h3>
+                    <p>Notre équipe d'experts exécute le plan avec précision et transparence.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number"></div>
+                    <h3 class="step-title">Optimisation</h3>
+                    <p>Nous suivons, analysons et optimisons en continu pour maximiser vos résultats.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section id="diagnostic" class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Prêt à transformer votre projet e-commerce ?</h2>
+            <p class="cta-subtitle">
+                Réservez votre diagnostic gratuit de 30 minutes avec un de nos experts. 
+                Nous analyserons votre situation et vous proposerons un plan d'action personnalisé.
+            </p>
+            <a href="#form" class="cta-button">Obtenir mon diagnostic gratuit</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">EcomAgency Pro</div>
+                
+                <div class="footer-contact">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>01 23 45 67 89</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>contact@ecomagency-pro.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Paris, France</span>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2023 EcomAgency Pro. Tous droits réservés.</p>
+                    <p>Spécialistes en gestion de publicité, création de boutique, sourcing de produits gagnants.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Script pour gérer la sélection du service
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ajouter un écouteur à tous les boutons CTA des services
+            const serviceButtons = document.querySelectorAll('.service-cta');
+            
+            serviceButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const service = this.getAttribute('data-service');
+                    
+                    // Stocker le service sélectionné dans localStorage
+                    localStorage.setItem('selectedService', service);
+                    
+                    // Rediriger vers la page de formulaire (à adapter avec votre URL Systeme.io)
+                    // Pour l'exemple, on scroll vers un formulaire simulé
+                    alert(`Service "${service}" sélectionné. Redirection vers le formulaire de diagnostic.`);
+                    
+                    // Simuler une redirection vers une page de formulaire
+                    // window.location.href = "https://votrecompte.systeme.io/formulaire-diagnostic";
+                    
+                    // Pour Systeme.io, vous créerez une page de formulaire séparée
+                    // et ajouterez un paramètre d'URL comme ?service=publicite
+                });
+            });
+            
+            // CTA principal
+            const mainCta = document.querySelector('.cta-button');
+            mainCta.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert("Redirection vers le formulaire de diagnostic général.");
+                // window.location.href = "https://votrecompte.systeme.io/formulaire-diagnostic";
+            });
+            
+            // CTA header
+            const headerCta = document.querySelector('.cta-header');
+            headerCta.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert("Redirection vers le formulaire de diagnostic général.");
+                // window.location.href = "https://votrecompte.systeme.io/formulaire-diagnostic";
+            });
+        });
+    </script>
+</body>
+</html>
